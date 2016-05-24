@@ -15,7 +15,7 @@
 
 \sloppy
 
-\title{Refatorações Arquiteturais: Um estudo sobre Mover Classe na Arquitetura de Sistemas}
+\title{Refatorações Arquiteturais: Um estudo sobre o efeito de Mover Classe na Arquitetura de Sistemas}
 
 \author{Vagner Clementino\inst{1}}
 
@@ -45,12 +45,13 @@
 \section{Introdução}
 \label{sec:intro}
 
-A atividade de refatoração têm por objetivo altera o código fonte de um software sem com isso alterar o seu comportamento visando em última instância melhorar a qualidade interna do sistema\cite{1999:RID:311424,Opdyke:1992:ROF:169783}. Sua importância é reconhecida tanto na literatura quanto na indústria, no qual processos de desenvolvimento ágeis o incorporam como atividade rotineira \cite{Beck:2000:PEP:557458}. No últimos anos, pesquisas foram realizadas com o objetivo de entender com qual frequência os desenvolvedores aplicam diferentes tipos de refatoração \cite{Murphy-Hill:2009:WRW:1555001.1555044}, relação com a correção de \textit{bugs}\cite{Kim:2011:EIR:1985793.1985815} e testes \cite{Kim:2012:EII:2473496.2473590}, e sua percepção pelos desenvolvedores\cite{Kim:2012:FSR:2393596.2393655}.
+A atividade de refatoração têm por objetivo alterar o código fonte de um software sem modificar o seu comportamento. Em última instância o objetivo de refatorar é melhorar a qualidade interna do sistema\cite{1999:RID:311424,Opdyke:1992:ROF:169783}. Sua importância é reconhecida tanto na literatura quanto na indústria, no qual, nesta última, é possível verificar a proposição de processos de desenvolvimento de software ágeis que incorporam a refatoração como atividade rotineira \cite{Beck:2000:PEP:557458}. No últimos anos, pesquisas foram realizadas com o objetivo de entender com qual frequência os desenvolvedores aplicam diferentes tipos de refatoração \cite{Murphy-Hill:2009:WRW:1555001.1555044}, a sua relação entre a correção de \textit{bugs}\cite{Kim:2011:EIR:1985793.1985815} e testes \cite{Kim:2012:EII:2473496.2473590} e a percepção da mesma pelos desenvolvedores\cite{Kim:2012:FSR:2393596.2393655}.
+
+No últimos anos estudos vêm focando em entender as motivações por detrás da refatoração. Existe um consenso que a motivação original é remover códigos de baixa qualidade conhecidos como \textit{Bad Smells}\cite{1999:RID:311424}. Todavia, estudos demonstraram que o desenvolvedores utilizam a refatoração para outros fins. Por exemplo, foi encontrado indícios que a refatoração \textit{Extrair Método} foi utilizada para fins de extensão do sistema \cite{Tsantalis2013}, para reutilização do código \cite{Danilo}, dentre outras motivações.
+
+Apesar da existência de estudos relativos à motivação da refatoração, ao bem do nosso conhecimento, não existem trabalhos que relacionem a atividade de refatorar com mudanças na arquitetura do sistema. Ou seja, \textit{refatorações que têm por objetivo alterar a arquitetura do software, reorganizar o código existente em uma nova camada lógica e cujo objetivo principal é aumentar a qualidade geral dos software}.
 
 
-No últimos anos alguns estudos vêm focando em entender as motivações por detrás da refatoração. A motivação original é a de remover padrões de código de baixa qualidade conhecidos como \textit{Bad Smells}\cite{1999:RID:311424}. Todavia, estudos demonstraram que o desenvolvedores utilizam a refatoração \textit{Extrair Método} para fins de extensão do sistema \cite{Tsantalis2013} ou ainda para reutilização do código \cite{Danilo}. 
-
-Apesar da existência de estudos relativos à motivação da refatoração, ao bem do nosso conhecimento, não existentes trabalhos que relacionem a atividade de refatorar com mudanças na arquitetura do sistema. Ou seja, Architecture Refactoring aims changing the software architecture, reorganizing the existing code into new logical layers with the main scope of increase the overall software quality and surpass architecture/infrastructure limitations that critically mine systematic qualities as (for example) scalability, extensibility, evolvability, testability and robustness of the actual solution system. A major challenge of this kind of refactoring is trying to reuse as much as possible existing code, to avoid writing a new software. Use of automatic tools can be few help (maybe just to detect circular dependencies), here the most work will come from your brain and experience.
 
 \bibliographystyle{sbc}
 \bibliography{../bib/paper-arqsw}
