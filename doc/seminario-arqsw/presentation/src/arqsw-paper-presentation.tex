@@ -1,0 +1,485 @@
+% $Header$
+
+\documentclass[t,14pt,mathserif]{beamer}
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\input{style.tex}
+
+%\usepackage[brazil]{babel}
+\usepackage[english]{babel}
+
+\usepackage{graphicx}	%Package para figuras
+% or whatever
+
+\usepackage[utf8]{inputenc}
+% or whatever
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{array}
+%\usepackage[cmex10]{amsmath}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\newcommand{\semitransp}[2][35]{\color{fg!#1}#2}
+
+\title[] % (optional, use only with long paper titles)
+{Evaluating the Effects of Architectural Documentation:\\
+A Case Study of a Large Scale Open Source Project}
+
+\subtitle
+{Presented by Vagner Clementino}
+
+%\author[] % (optional, use only with lots of authors)
+%{Vagner Clementino~\inst{1}} %\and S.~Another\inst{2}}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[] % (optional, but mostly needed)
+{
+%  \inst{1}%
+  Department of Computer Science\\
+  Federal University of Minas Gerais (UFMG)\\
+  Software Archicteture - 2016\\
+  %\and
+  %\inst{2}%
+  %Department of Theoretical Philosophy\\
+  %University of Elsewhere
+  }
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[2015/04/29] %o(optional, should be abbreviation of conference name)
+%{Software Quality and Measurement 2015-1 \\Prof. Eduardo Figueiredo}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\subject{Software Engineer}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Structuring a talk is a difficult task and the following structure
+% may not be suitable. Here are some rules that apply for this
+% solution: 
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+% - A conference audience is likely to know very little of what you
+%   are going to talk about. So *simplify*!
+% - In a 20min talk, getting the main ideas across is hard
+%   enough. Leave out details, even if it means being less precise than
+%   you think necessary.
+% - If you omit details that are vital to the proof/implementation,
+%   just say so once. Everybody will be happy with that.
+\section{About the Paper}
+
+\begin{frame}{About the Paper}
+	\begin{itemize}
+		\item Who:
+			\begin{itemize}				
+				\item Kazman, Rick (Senior Member IEEE)
+				\item Goldenson, Dennis (Senior Member IEEE)
+				\item Monarch, Ira (Software Engineering Institute)
+				\item Nichols, William (Senior Member IEEE)
+				\item Valetto, Giuseppe	(Member IEEE)		
+			\end{itemize}				
+		\item When: 2015
+		
+			
+	    \item Where:
+	      
+	       \begin{itemize}
+		     
+		     \item IEEE Transactions on Software Engineering  (Volume:42 ,  Issue: 3 )  
+			        
+	       \end{itemize}
+		
+	
+	\end{itemize}
+
+
+\end{frame}
+
+
+\section{Context}
+
+\begin{frame}{Contribution in Open Source System (OSS)}
+  \begin{itemize}
+  \item Sustaining large \alert{Open Source System (OSS)} requires continuos
+  recruitment new participants.
+  \item The number of contributors can be used as metric of project sucess.  
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Objective of Architectural Documentation}
+	
+	\begin{itemize}
+		\item Architectural documentation is believed to serve three major purposes  \cite{clements2002documenting}:		
+		\begin{enumerate}
+			\item providing a means of introducing new project members to the system
+			\item serving as a vehicle for communication among stakeholders
+			\item being the basis for system analysis and construction
+		\end{enumerate}
+	\end{itemize}
+	
+\end{frame}
+
+
+\section{Motivation}
+
+\begin{frame}{Architectural Documentation in OSS}
+	
+	\begin{itemize}
+		\item A lack of architectural documentation might inhibit new participants since large amounts of project knowledge are unavailable to newcomers.
+		\item In 5.4 percent of open source projects have any software architecture documentation \cite{6923128}
+	\end{itemize}
+	
+\end{frame}
+
+
+
+\section{Proposed Work}
+
+
+\begin{frame}{Proposed Work}
+	\begin{itemize}
+	\item This is a multitrait, multimethod analysis of the effects of introducing architectural documentation into a substantial open source project
+	\item The objective is to investigate \alert{if} and \alert{how} architecture documentation adds \alert{value} to a software project.
+	\end{itemize}	
+\end{frame}
+
+\section{Study Design}
+
+\begin{frame}{Open Source System Selection}
+	
+	\begin{itemize}
+		\item The study used Hadoop Distributed File System (HDFS)\cite{shvachko2010hadoop}.
+		\item The Apache Hadoop project is widely used by large companies such as Yahoo!, eBay, Facebook, and others.
+	\end{itemize}
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=3.0in]{../img/hadoop-logo}
+		\label{fig:hadoop-logo}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}{Documenting the HDFS Architecture}
+	
+	\begin{itemize}
+		\item The architecture documentation captured the main abstractions employed in HDFS
+		\item It is also to connect those abstractions to the code (files) that developers work on every day.	
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{HDFS Run-Time Concepts}
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=4.5in]{../img/run-time-concept}
+		\label{fig:diagrama-run-time}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}{Documented Module Relationships in HDFS}
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=4.5in]{../img/module-relationships}
+		\label{fig:module-relationships}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Research Question}
+	
+	\begin{description}
+		\item[RQ 1.1] Was the architecture document read and if so, how much and how did it change?
+		\item[RQ 1.2] Was the architecture document referred to by the project Contributors and Committers?
+	\end{description}
+	
+\end{frame}
+
+\begin{frame}{Research Question}
+	
+	\begin{description}
+		\item[RQ 2.1] Was the introduction of the architecture document associated with a change in submission activity?
+		\item[RQ 2.2] Was the introduction of the architecture document associated with a change in the quality of submissions?
+	\end{description}
+	
+\end{frame}
+
+
+\begin{frame}{Research Question}
+	
+	\begin{description}
+		\item[RQ 3.1] Was the introduction of the architecture document associated with faster promotion from Commenter to Contributor to Committer?
+		\item[RQ 3.2] Was the introduction of the architecture document associated with changes in project communication patterns?
+	\end{description}
+	
+\end{frame}
+
+
+\begin{frame}{Research Question}
+	
+	\begin{description}
+		\item[RQ 4.1]  Were there any measurable differences in the use of architectural concepts in discussion of issues before and after the architecture document was introduced?
+		\item[RQ 5.1] How did the Contributors and Committers use the key concepts outlined in the architecture document?
+	\end{description}
+	
+\end{frame}
+
+
+\begin{frame}{Methodology}
+	
+
+\begin{table}[!t]
+	\huge
+	\renewcommand{\arraystretch}{4.3}
+	\resizebox{\linewidth}{2.0cm}{
+			\begin{tabular}{|l|l|}
+				\hline
+				\multicolumn{1}{|c|}{\textbf{Research Question}} & \multicolumn{1}{c|}{\textbf{Methodology}} \\ \hline
+				\textit{RQ 1.1} & Tracking how often the architecture documentation is downloaded and how often it is mentioned in discussion groups \\ \hline
+				\textit{RQ 2.1 \& 2.2} & Tracking whether any changes have occurred in the interactions and activities of the HDFS developer (Contributors and Committers) \\ \hline
+				\textit{RQ 3.1 \& 3.2} & Tracking project community health measures, such as the growth of the committer group, and the time lag between someone's appearance as a Contributor and their acceptance as a Committer\\ \hline
+				\textit{RQ 4.1} & Tracking whether the introduction of the architecture documentation changed how the project community discussed the system \\ \hline
+				\textit{RQ 2.1 \& 2.2} & Tracking product performance indicators, such as project capacity—how often Contributors made submissions to the system—and submission quality—how often submissions were rejected by the Committers \\ \hline
+				\textit{RQ 1.2 \& 5.1} & Surveying the HDFS Contributor and Committer community on their opinions of the value of the architecture documentation that we created \\ \hline
+			\end{tabular}
+	 }
+
+	\label{my-label}
+\end{table}
+
+
+\end{frame}
+
+
+\section{Results}
+
+
+\begin{frame}{RQ 1.1 Was the architecture document read and if so, how much and how did it change?}
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=4.0in]{../img/visitors}
+		\label{fig:visitors}
+	\end{figure}
+		
+\end{frame}
+
+
+\begin{frame}{RQ 1.1 Was the architecture document read and if so, how much and how did it change?}
+	
+	\begin{itemize}
+		\item The architecture documentation website was visited over 14,000 times in 19 months
+		\item Almost 30 percent of these visits were from return visitors
+		\item The access rate increased steadily during the study period.
+	\end{itemize}
+
+	
+\end{frame}
+
+
+\begin{frame}{RQ 1.2 Was the architecture document referred to by the project Contributors and Committers?}
+	
+	\begin{itemize}
+		\item Based on survey the Committers and Contributors reported having made relatively little reference to the architectural document itself
+		\item The HDFS Committers appeared to be beginning to advise others about the existence of the documentation available on the Internet.
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{RQ 2.1 Was the introduction of the architecture document associated with a change in submission activity?}
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=4.0in]{../img/issue-patch}
+		\label{fig:issue-patch}
+	\end{figure}
+	
+\end{frame}
+
+
+\begin{frame}{RQ 2.2 Was the introduction of the architecture document associated with a change in the quality of submissions?}
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=3.0in]{../img/issue-quality-table}
+		\label{fig:issue-quality-table}
+	\end{figure}
+	
+
+\end{frame}
+
+
+
+\begin{frame}{RQ 3.1 Was the introduction of the architecture document associated with faster promotion from Commenter to Contributor to Committer?}
+	\begin{equation} \mathrm{Commenter} \to \mathrm{Contributor} \to \mathrm{Committer} \end{equation}
+
+    \begin{figure}[!t]
+    	\centering
+    	\includegraphics[width=3.0in]{../img/promotion-table}
+    	\label{fig:promotion-table}
+    \end{figure}
+	
+\end{frame}
+
+\begin{frame}{RQ 3.2 Was the introduction of the architecture document associated with changes in project communication patterns?}
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=2.5in]{../img/centrality}
+		\label{fig:promotion-table}
+	\end{figure}
+	
+\end{frame}
+
+
+\begin{frame}{RQ 4.1 Were there any measurable differences in the use of architectural concepts in discussion of issues before and after the architecture document was introduced?}
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=1.9in]{../img/concept-map-before}
+		\label{fig:promotion-table}
+	\end{figure}
+	
+\end{frame}
+
+
+\begin{frame}{RQ 4.1 Were there any measurable differences in the use of architectural concepts in discussion of issues before and after the architecture document was introduced?}
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=2.0in]{../img/concept-map-after}
+		\label{fig:promotion-table}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{RQ 5.1 How did the Contributors and Committers use the key concepts outlined in the architecture document?}
+	\begin{itemize}
+		\item Contributors and Committers we surveyed clearly recognized the importance of the concepts that were covered in the architectural document and used them in their own work on the HDFS codebase.
+		\item they sometimes tended to focus more heavily on implementation details than architectural considerations \textit{per se}.		
+	\end{itemize}
+	
+\end{frame}
+
+
+\section{Conclusions}
+\begin{frame}{Conclusions}
+	\begin{itemize}
+		\item he HDFS Committers appear to maintain intellectual control over their code base. They can do this because the code base is not very large and because they are a relatively small, stable, and co-located group. Therefore, the architecture documentation did not interest or affect the Committers (as measured by their response to our surveys and their lack of referring to it in the JIRA postings and mail archives).
+		The HDFS community of Committers (and the most active Contributors) is actively interested in architectural concepts, as shown by the text analysis that we did. They frequently discuss architectural concepts, but this architectural information is implicitly shared, and informally presented and disseminated, dispersed in mail archives and JIRA postings.
+		The architecture documentation that we created did appear to have an effect on the project, but principally on “outsiders,” such as, less active Contributors, and newcomers. Many people accessed the documentation web pages (over 25,000 to date) and there were many return visitors (33 percent, more than 8,000, of the page visits were return visits).
+		The project's social network became less centralized and the speed of promotion from Commenter to Contributor was (statistically significantly) quicker after the introduction of the documentation. Newcomers are not participating more (in terms of volume of contributions), but they are becoming more effective. This is, of course, correlation, and does not prove causation. While the lessening of centralization and increasing promotion rates are consistent with the claimed effects of explicit architectural documentation, there may be other explanations for both phenomena.
+		The architecture documentation did not appear to significantly affect submission activity or quality. There was more activity after the introduction of the architecture documentation, but this may have been due to confounding factors
+	\end{itemize}
+	
+\end{frame}
+
+
+\section{Threats to Validity}
+\begin{frame}{Threats to Validity}
+	\begin{itemize}
+	    \item 
+	
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Questions?}
+
+	\begin{figure}[hbtp]
+		\centering
+	\includegraphics[scale=1]{../img/questions.jpg}
+	\end{figure}
+	
+
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+   \frametitle{References}
+   \bibliographystyle{IEEEtranS}
+   \bibliography{IEEEfull,bibliografia}
+\end{frame}
+
+\end{document}
