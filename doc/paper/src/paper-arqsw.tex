@@ -11,11 +11,11 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage[table,xcdraw]{xcolor}
-
+\usepackage{todonotes}
 
 \sloppy
 
-\title{Refatorações Arquiteturais: Um estudo sobre o efeito de Mover Classe na Arquitetura de Sistemas}
+\title{Um estudo sobre o efeito de Mover Classe na Arquitetura de Sistemas de Código Aberto}
 
 \author{Vagner Clementino\inst{1}}
 
@@ -45,23 +45,21 @@
 \section{Introdução}
 \label{sec:intro}
 
-A atividade de refatoração têm por objetivo alterar o código fonte de um software sem modificar o seu comportamento. Em última instância o objetivo de refatorar é melhorar a qualidade interna do sistema\cite{1999:RID:311424,Opdyke:1992:ROF:169783}. Sua importância é reconhecida tanto na literatura quanto na indústria, no qual, nesta última, é possível verificar a proposição de processos de desenvolvimento de software ágeis que incorporam a refatoração como atividade rotineira \cite{Beck:2000:PEP:557458}. No últimos anos, pesquisas foram realizadas com o objetivo de entender com qual frequência os desenvolvedores aplicam diferentes tipos de refatoração \cite{Murphy-Hill:2009:WRW:1555001.1555044}, a sua relação entre a correção de \textit{bugs}\cite{Kim:2011:EIR:1985793.1985815} e testes \cite{Kim:2012:EII:2473496.2473590} e a percepção da mesma pelos desenvolvedores\cite{Kim:2012:FSR:2393596.2393655}.
+A atividade de refatoração tem por objetivo alterar o código fonte de um software sem modificar o seu comportamento. Em última instância, refatorar visa melhorar a qualidade interna do sistema \cite{Fowler1999,Opdyke:1992:ROF:169783}. Sua importância é reconhecida tanto na literatura quanto na indústria, no qual, nesta última, é possível verificar a existência de processos de desenvolvimento que incorporam a refatoração como atividade rotineira \cite{Beck:2000:PEP:557458}. No últimos anos, pesquisas foram realizadas com o objetivo de entender com qual frequência os desenvolvedores aplicam os diferentes tipos de refatoração \cite{Murphy-Hill:2009:WRW:1555001.1555044}; a relação entre a atividade de refatorar e a correção de \textit{bugs}\cite{Kim:2011:EIR:1985793.1985815} bem como nos resultados de testes de regressão  \cite{Kim:2012:EII:2473496.2473590}. No trabalho de kim et.al discute a percepção dos desenvolvedores sobre a refatoração \cite{Kim:2012:FSR:2393596.2393655}.
 
-No últimos anos estudos vêm focando em entender as motivações que levam os desenvolvedores a realizem refatoração. Existe um consenso que a motivação original é remover porções de código com baixa qualidade conhecidos como \textit{Bad Smells}\cite{1999:RID:311424}. Todavia, estudos demonstraram que o desenvolvedores refatoram para outros fins, como por exemplo, a refatoração \textit{Extrair Método} que pode ser utilizada para fins de extensão do sistema \cite{Tsantalis2013}ou ainda para reutilização do código \cite{Danilo}, dentre outras motivações.
+Recentemente estudos vêm focando em entender as motivações que levam os desenvolvedores a realizem refatoração. Existe um consenso que a motivação original é remover porções de código com baixa qualidade conhecidos como \textit{Bad Smells} \cite{Fowler1999}. Todavia, estudos demonstraram que o desenvolvedores refatoram para outros fins, como por exemplo, a refatoração \textit{Extrair Método}  pode ser utilizada para fins de extensão do sistema ou mesmo possibilitar compatibilidade com versões anteriores do código \cite{Tsantalis2013}. É possível verificar a utilização do \textit{Extrair Método} visando favorecer a reutilização de código no longo prazo,mesmo que inicialmente não seja esta a intenção \cite{Danilo}.
 
-Apesar da existência de estudos relativos à motivação da refatoração, ao bem do nosso conhecimento, não existem trabalhos que relacionem a atividade de refatorar com mudanças na arquitetura do sistema. Ou seja, refatorações que têm por objetivo alterar a arquitetura do software, reorganizar o código existente em uma nova camada lógica ou cujo objetivo é tratar o problema da  \textit{Erosão Arquitetural}. O processo de Erosão arquitetural e conhecido como os desvios ocorridos no código de um sistema que causam violação de alguma regra arquitetural previamente estabelecida\cite{Perry:1992:FSS:141874.141884}. Violações na arquitetura podem ser de dois tipos: \textit{divergência}, quando uma dependência que existe no código fonte viola a arquitetura planejada; \textit{ausência}, caso onde o código fonte não estabelece uma dependência que é prescrita na arquitetura planejada \cite{5204070}.	
+Apesar da existência de estudos relativos à motivação da refatoração, ao bem do nosso conhecimento, não existem trabalhos que relacionem a refatoração \textit{Mover Classe} com mudanças na arquitetura do sistema. Suspeitamos que o fato de um desenvolvedor mover classes em um número maior que padrão do sistema tem por objetivo alterar a arquitetura do sistema. Este tipo de ação é conhecida como \textit{batching moving}. A mudança na arquitetura pode ter como objetivo, por exemplo, reorganizar o código existente em uma nova camada lógica ou ainda tratar o problema da  \textit{Erosão Arquitetural}. O processo de Erosão arquitetural é conhecido como os desvios ocorridos no código de um sistema que causam violação de alguma regra arquitetural previamente estabelecida\cite{Perry:1992:FSS:141874.141884}.
 
-Neste sentido, este trabalho se propõe em analisar a relação entre mudanças na arquitetura de um sistema e a refatoração \textit{Mover Classe}. A fim de investigar tal relação iremos analisar diversas versões de 03 sistemas de código aberto desenvolvidos em Java visando responder as seguintes questões de pesquisa:
-
+Neste sentido, este trabalho se propõe em analisar a relação entre mudanças na arquitetura de um sistema e a refatoração \textit{Mover Classe}. A fim de investigar tal relação analisamos o histórico de versões de 04 sistemas de código aberto \todo{Listar os sistemas escolhidos} desenvolvidos em Java e procedemos com um \textit{survey} com os desenvolvedores visando responder as seguintes questões de pesquisa:
 
 \begin{description}
-	\item[RQ1] Com qual frequência a refatoração Mover Classe tem por objetivo alterar a arquitetura do sistema?
-	\item[RQ2] Com qual frequência o desenvolvedor informa que a refatoração teve por objetivo alterar a arquitetura do sistema?
-	\item[RQ3] A refatoração Mover Classe prevalece na resolução de desvios arquiteturais do tipo divergência ou ausência?	
+	\item[RQ1] Com qual frequência a refatoração Mover Classe tem por objetivo alterar a arquitetura do sistema (\textit{batching moving})?
+	\item[RQ2] Com qual frequência o desenvolvedor informa no \textit{log de commit} que a refatoração teve por objetivo alterar a arquitetura do sistema?
+	\item[RQ3] Segundo dos desenvolvedores, Mover Classe foi efetivamente utilizado para alterar a arquitetura dos sistema?	
 \end{description}
 
 Ao responder as questões proposta neste trabalho entendemos que iremos contribuir no aumento do entendimento das razões que levam os desenvolvedores a realizar refatorações. Esta informação poderá ser utilizada posteriormente na construção de ferramentas que ajudem os times de desenvolvimento em tarefe relativas à mudança da arquitetura do software. Além disso será possível verificar a relação entre a atividade de refatoração e a mudança de arquitetura de um sistema. 
-
 
 O restante deste trabalho está organizado da seguinte forma: a Seção \ref{sec:metodologia} descreve a metodologia utilizada neste estudo; a Seção \ref{sec:resultados} apresenta os resultados e responde as questões de pesquisas propostas; na Seção \ref{sec:ameacas} realiza-se uma discussão sobre as ameaças à validade do trabalho; a Seção \ref{sec:trabalhos-relacionados} apresenta os trabalhos relacionados à análise da atividade e detecção de refatoração; a Seção \ref{sec:conclusao} sumariza o artigo e discute suas principais contribuições.
 
