@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.8">
+ <project-name>md_proj_arqsw</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="vagner@arqsw" />
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/arqsw" />
+   <property key="UID" value="vagner" />
+   <property key="PWD" value="4Andr3z@" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+  <data-source id="DS0">
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="Logical" value="vagner@arqsw" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/arqsw" />
+   <property key="UID" value="vagner" />
+   <property key="PWD" value="4Andr3z@" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+  <database id="DB0" populated="true" UUID="ac0a158d-08f9-445d-906e-47667e22556b" dbcs-ref="DS0" name="vagner@arqsw" physicalName="vagner@arqsw" >
+   <catalog id="CAT1" populated="true" UUID="20102d0e-92dc-46c0-85de-0585b014e122" name="arqsw" nativeTerm="database" physicalName="arqsw" >
+    <schema id="SCH2" populated="true" UUID="75872df2-05cb-4da8-aed2-14815c6718e1" name="information_schema" nativeTerm="schema" physicalName="information_schema" >
+    </schema>
+    <schema id="SCH3" populated="true" UUID="1052960f-df68-48eb-8990-03887cf11534" name="pg_catalog" nativeTerm="schema" physicalName="pg_catalog" >
+    </schema>
+    <schema id="SCH4" populated="true" UUID="a6f01dce-b8b2-45ce-a647-f0e6b722a724" name="pg_toast_temp_1" nativeTerm="schema" physicalName="pg_toast_temp_1" >
+    </schema>
+    <schema id="SCH5" populated="true" UUID="bc5ed371-9d67-452c-9af7-38cc598e2749" name="public" nativeTerm="schema" physicalName="public" >
+     <table id="TAB6" populated="true" UUID="2c97d34f-4b00-45b4-9895-59399454d517" name="refactoring" objectType="TABLE" physicalName="refactoring" >
+      <remarks></remarks>
+      <folder id="FOLTAB61" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL7" populated="true" UUID="25036257-9c17-46af-b38b-1371d9253a59" autoIncrement="true" defaultValue="nextval(&apos;refactoring_id_refatoring_seq&apos;::regclass)" name="id_refatoring" nullable="0" physicalName="id_refatoring" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL8" populated="true" UUID="85e840c1-c897-4862-89e5-4575866ecef6" autoIncrement="false" name="id_commit" nullable="0" physicalName="id_commit" precision="40" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL9" populated="true" UUID="4ad560c2-007a-4b6d-abed-3fcd01790ec7" autoIncrement="false" name="id_parent_commit" nullable="0" physicalName="id_parent_commit" precision="40" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL10" populated="true" UUID="b75d4c4a-dfef-4c0b-a3e1-de72407ba174" autoIncrement="false" name="refactoring_string" nullable="0" physicalName="refactoring_string" precision="3000" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL11" populated="true" UUID="9ed7989e-1dd7-485a-988c-73d745b95d39" autoIncrement="false" name="update_date" nullable="0" physicalName="update_date" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB63" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB62" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB64" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX12" populated="true" UUID="305199e5-54bb-4f85-bb97-d091effc528b" clustered="false" index-type="BTREE" name="refactoring_pkey" physicalName="refactoring_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC13" populated="true" UUID="b5f1db42-5b38-4e53-b097-4c96424234fe" ascendingOrDescending="UNSPECIFIED" column-ref="COL7" name="id_refatoring" physicalName="id_refatoring" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB14" populated="true" UUID="16b3dee5-6ffc-4ea9-84b4-4a1030b83946" name="execution_control" objectType="TABLE" physicalName="execution_control" >
+      <remarks>Trabalha para controlar a execução da coleta de refactoring de cada projeto analisado</remarks>
+      <folder id="FOLTAB141" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL15" populated="true" UUID="4bd8a2da-e2c4-48d4-a5fd-7d82053aa6c9" autoIncrement="false" name="id_execution_control" nullable="0" physicalName="id_execution_control" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Chave primária da tabela execution_control. Valor auto-incrementado.</remarks>
+       </column>
+       <column id="COL16" populated="true" UUID="feaa9606-9c1d-471d-8957-47821025c7c4" autoIncrement="false" defaultValue="nextval(&apos;sq_project&apos;::regclass)" name="id_project" nullable="0" physicalName="id_project" precision="10" referenceCount="2" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Chave estrangeira (FK) para a tabela project</remarks>
+       </column>
+       <column id="COL17" populated="true" UUID="eb3951a8-40d8-441a-9ddf-3f6fae2a1384" autoIncrement="false" name="seq_sequence" nullable="0" physicalName="seq_sequence" precision="5" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Sequência de execução de deterimado projeto</remarks>
+       </column>
+       <column id="COL18" populated="true" UUID="ebf0d4b9-b36c-4089-9529-b407ea7b28a5" autoIncrement="false" name="start_time" nullable="1" physicalName="start_time" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>Estampa de tempo do início da execução do projeto</remarks>
+       </column>
+       <column id="COL19" populated="true" UUID="cd3d3ff1-3802-42ca-b6c0-33a90e296e63" autoIncrement="false" name="finish_time" nullable="1" physicalName="finish_time" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>Tempo de finalizado da sequência de execução de determinado projeto</remarks>
+       </column>
+       <column id="COL20" populated="true" UUID="4a3139d6-f9c5-4dde-a3ad-06f263a92674" autoIncrement="false" defaultValue="&apos;S&apos;::bpchar" name="sucess" nullable="0" physicalName="sucess" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+        <remarks>Indicativo do sucesso ou não da execução de determinado projeto</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB143" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB142" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB144" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX21" populated="true" UUID="2615780e-4968-44d2-a6ab-e3c8cd85f2fb" clustered="false" index-type="BTREE" name="pk_execution_control" physicalName="pk_execution_control" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC22" populated="true" UUID="277f4f72-171e-46cb-ad5e-5f2c86c26c9e" ascendingOrDescending="UNSPECIFIED" column-ref="COL15" name="id_execution_control" physicalName="id_execution_control" />
+       </index>
+       <index id="IDX23" populated="true" UUID="c327d93d-4482-479c-84c2-0c10a9bc2aa8" clustered="false" index-type="BTREE" name="uq_id_project_execution_sequence" physicalName="uq_id_project_execution_sequence" primaryKeyIndex="false" unique="true" >
+        <index-column id="IDC24" populated="true" UUID="bbc26322-e02c-434e-a79d-9afca2939750" ascendingOrDescending="UNSPECIFIED" column-ref="COL16" name="id_project" physicalName="id_project" />
+        <index-column id="IDC25" populated="true" UUID="028be55b-090c-4a0e-994d-96122067638a" ascendingOrDescending="UNSPECIFIED" column-ref="COL17" name="seq_sequence" physicalName="seq_sequence" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB26" populated="true" UUID="1de34ea2-6f96-4d26-8e01-97738c7dd2e6" name="project" objectType="TABLE" physicalName="project" >
+      <remarks>Tabela para armarzenar os dados dos projetos do github utilizado no projeto da disciplina</remarks>
+      <folder id="FOLTAB261" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL27" populated="true" UUID="a7b5cf83-b979-4fa8-b07a-2b24afd56157" autoIncrement="false" defaultValue="nextval(&apos;sq_project&apos;::regclass)" name="id_project" nullable="0" physicalName="id_project" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks></remarks>
+       </column>
+       <column id="COL28" populated="true" UUID="919a8710-a188-468a-b4cc-cdad486d1032" autoIncrement="false" name="code_project" nullable="0" physicalName="code_project" precision="2" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Código do projeto. Gerado com base sequêncial no número de projetos analisados.</remarks>
+       </column>
+       <column id="COL29" populated="true" UUID="9a32a230-ad72-4a64-9800-4b7615fa6b7d" autoIncrement="false" name="name_project" nullable="0" physicalName="name_project" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>Nome do projeto github utilizado</remarks>
+       </column>
+       <column id="COL30" populated="true" UUID="406e56cd-0b27-4be2-af4d-cd660eb0fcf4" autoIncrement="false" name="total_commit_project" nullable="1" physicalName="total_commit_project" precision="5" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks></remarks>
+       </column>
+       <column id="COL31" populated="true" UUID="fe744964-37a7-4cee-889e-d6b04e3f08ff" autoIncrement="false" name="git_url_project" nullable="0" physicalName="git_url_project" precision="4000" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>URL do git utilizada para clonar o projeto.</remarks>
+       </column>
+       <column id="COL32" populated="true" UUID="09102e19-5f51-4553-b000-79fd3d7ca947" autoIncrement="false" name="total_branch_project" nullable="1" physicalName="total_branch_project" precision="5" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Total de branches que o projecto possui</remarks>
+       </column>
+       <column id="COL33" populated="true" UUID="a07b7870-aaa2-4686-9d36-ab91cc79afb1" autoIncrement="false" name="total_release_project" nullable="1" physicalName="total_release_project" precision="5" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Total de realeases do projeto</remarks>
+       </column>
+       <column id="COL34" populated="true" UUID="e8a7a6f4-6b98-413b-94ca-26bee250ac9f" autoIncrement="false" name="total_contributor_project" nullable="1" physicalName="total_contributor_project" precision="5" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks></remarks>
+       </column>
+       <column id="COL35" populated="true" UUID="24c77eeb-37df-419d-bf54-fbdc541bb61a" autoIncrement="false" name="loc_poject" nullable="1" physicalName="loc_poject" precision="5" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Numero de linhas ( number of lines) da última versão coletada dos sistema.</remarks>
+       </column>
+       <column id="COL36" populated="true" UUID="4fe3df59-a774-45e0-9d83-4c814ac2de2e" autoIncrement="false" name="updating_date" nullable="0" physicalName="updating_date" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>Data de atualização das informações</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB263" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB262" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB264" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX37" populated="true" UUID="94b223d6-32c4-4008-8200-8172be1f17b7" clustered="false" index-type="BTREE" name="pk_project" physicalName="pk_project" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC38" populated="true" UUID="2ddbbff4-66ff-4f2c-90eb-91e4b622814b" ascendingOrDescending="UNSPECIFIED" column-ref="COL27" name="id_project" physicalName="id_project" />
+       </index>
+       <index id="IDX39" populated="true" UUID="73d9cf13-0b65-43d5-9e59-525da0d4f0e5" clustered="false" index-type="BTREE" name="uq_cod_project" physicalName="uq_cod_project" primaryKeyIndex="false" unique="true" >
+        <index-column id="IDC40" populated="true" UUID="a677f542-72df-4c7f-a0b4-a1275f0cb9dd" ascendingOrDescending="UNSPECIFIED" column-ref="COL28" name="code_project" physicalName="code_project" />
+       </index>
+       <index id="IDX41" populated="true" UUID="a6ce6a6a-59e8-4f93-8816-a62fc21973ea" clustered="false" index-type="BTREE" name="uq_name_project" physicalName="uq_name_project" primaryKeyIndex="false" unique="true" >
+        <index-column id="IDC42" populated="true" UUID="c1ce396c-2744-409d-ac14-fc6ceb1a5fd8" ascendingOrDescending="UNSPECIFIED" column-ref="COL29" name="name_project" physicalName="name_project" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB43" populated="true" UUID="e816a55f-6da8-4174-8679-eb56ccba9eeb" name="refactoring_item" objectType="TABLE" physicalName="refactoring_item" >
+      <remarks>Tabela para armezar os itens de refactoroings recuperados de determinado projecto</remarks>
+      <folder id="FOLTAB431" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL44" populated="true" UUID="a6a3c6ed-7da4-408f-bad6-a1965557238d" autoIncrement="false" defaultValue="nextval(&apos;sq_refactoring_item&apos;::regclass)" name="id_refactoring_item" nullable="0" physicalName="id_refactoring_item" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>ṔK da tabela refacotring_item. Número sequência auto-incrementado.</remarks>
+       </column>
+       <column id="COL45" populated="true" UUID="d969ea08-7cde-4bfc-a917-fe618d9666e7" autoIncrement="false" name="id_execution_control" nullable="0" physicalName="id_execution_control" precision="10" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>FK da tabela execution_control</remarks>
+       </column>
+       <column id="COL46" populated="true" UUID="73c4f992-6435-4a18-b642-cee949fd66e6" autoIncrement="false" name="refactoring_name" nullable="0" physicalName="refactoring_name" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>Nome do refactoring detectado.</remarks>
+       </column>
+       <column id="COL47" populated="true" UUID="0ffb5a4a-83cf-4fa2-8776-e31daa9dc562" autoIncrement="false" name="refactoring_string" nullable="0" physicalName="refactoring_string" precision="3000" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL48" populated="true" UUID="f9a812ee-cabd-4011-b7d8-0541d9e844a2" autoIncrement="false" name="id_commit" nullable="0" physicalName="id_commit" precision="10" referenceCount="2" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Chave estrangeira para a tabela commit</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB433" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB432" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB434" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX49" populated="true" UUID="121a2823-7f9e-4cac-bd34-1a4ab3006f69" clustered="false" index-type="BTREE" name="pk_refactoring_item" physicalName="pk_refactoring_item" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC50" populated="true" UUID="8fc2bb19-8114-4979-acdc-6dbae4565543" ascendingOrDescending="UNSPECIFIED" column-ref="COL44" name="id_refactoring_item" physicalName="id_refactoring_item" />
+        <index-column id="IDC51" populated="true" UUID="20153222-ad2d-4592-a616-506d8115b01a" ascendingOrDescending="UNSPECIFIED" column-ref="COL45" name="id_execution_control" physicalName="id_execution_control" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB52" populated="true" UUID="a85010aa-e7ae-4352-9bfc-52cd45138654" name="commit" objectType="TABLE" physicalName="commit" >
+      <remarks>Tabela que armeza os commits de determinado projeto</remarks>
+      <folder id="FOLTAB521" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL53" populated="true" UUID="4b66ac99-291a-43a1-8ccf-29338b912f9b" autoIncrement="false" defaultValue="nextval(&apos;sq_commit&apos;::regclass)" name="id_commit" nullable="0" physicalName="id_commit" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Chave primária da tabela commit. Valor automático e autoincementável.</remarks>
+       </column>
+       <column id="COL54" populated="true" UUID="4566349a-6009-417a-bd24-9f765284ba36" autoIncrement="false" name="commit_sha_key" nullable="0" physicalName="commit_sha_key" precision="40" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>SHA  key do commit sendo analisado</remarks>
+       </column>
+       <column id="COL55" populated="true" UUID="b1c00ae1-6ac5-4e51-b5b1-387694d8ba6a" autoIncrement="false" name="parent_commit_sha_key" nullable="0" physicalName="parent_commit_sha_key" precision="40" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>Chave SHA do commit pai (commit anterior) ao que está sendo analisado e que fio salvo na coluna commit_sha_key</remarks>
+       </column>
+       <column id="COL56" populated="true" UUID="f2058bc2-8187-49b6-aeff-4b51949355e5" autoIncrement="false" name="commit_date" nullable="0" physicalName="commit_date" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>Date e hora que o commit foi realizado.</remarks>
+       </column>
+       <column id="COL57" populated="true" UUID="9c625d30-9da5-4ae7-a084-98579e07e951" autoIncrement="false" name="commit_autor" nullable="0" physicalName="commit_autor" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>Autor do commit</remarks>
+       </column>
+       <column id="COL58" populated="true" UUID="55850e6d-c58d-429f-a051-69eaef4abda5" autoIncrement="false" name="commit_author_contact" nullable="0" physicalName="commit_author_contact" precision="500" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>Email de contato com o autor do commit</remarks>
+       </column>
+       <column id="COL59" populated="true" UUID="ec39679e-1c94-4a16-8e84-2ba388105392" autoIncrement="false" name="commit_message" nullable="0" physicalName="commit_message" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks>Armazena a message de commit informada pelo desenvolvedor</remarks>
+       </column>
+       <column id="COL60" populated="true" UUID="1676c9af-e068-492f-8ac2-62f9ba2d79da" autoIncrement="false" name="id_project" nullable="1" physicalName="id_project" precision="10" referenceCount="2" scale="0" sourceDataTypeName="numeric" type="2" >
+        <remarks>Chave estrageira para a tabela project</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB523" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB522" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB524" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX61" populated="true" UUID="0dda6f90-a394-4ea3-84a1-a3f45617e5a7" clustered="false" index-type="BTREE" name="pk_commit" physicalName="pk_commit" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC62" populated="true" UUID="fde7ad3d-f2a5-4ef2-8cfa-21646f5c72cd" ascendingOrDescending="UNSPECIFIED" column-ref="COL53" name="id_commit" physicalName="id_commit" />
+       </index>
+       <index id="IDX63" populated="true" UUID="2f21d754-08cf-44bf-8bf1-db4c027335fd" clustered="false" index-type="BTREE" name="uq_commit_sha_key" physicalName="uq_commit_sha_key" primaryKeyIndex="false" unique="true" >
+        <index-column id="IDC64" populated="true" UUID="885dac46-0e76-4955-80dd-f3588c0d84b9" ascendingOrDescending="UNSPECIFIED" column-ref="COL54" name="commit_sha_key" physicalName="commit_sha_key" />
+       </index>
+       <index id="IDX65" populated="true" UUID="85d1b9e6-df3b-4894-832b-c17eb58b4310" clustered="false" index-type="BTREE" name="fki_commit_idproject_projc_id_project" physicalName="fki_commit_idproject_projc_id_project" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC66" populated="true" UUID="2e7c9c63-7d82-4c3f-b1ba-7a2f78100e3e" ascendingOrDescending="UNSPECIFIED" column-ref="COL60" name="id_project" physicalName="id_project" />
+       </index>
+      </folder>
+     </table>
+    </schema>
+   </catalog>
+   <relationships>
+    <relationship id="REL67" populated="true" UUID="00b361e4-0999-4125-9523-099e0063e088" deferrability="7" deleteRule="3" fk-table-ref="TAB43" fkCardinality="7" identifying="true" name="fk_execctrl_idexectrl_recitm_idexectrl" physicalName="fk_execctrl_idexectrl_recitm_idexectrl" pk-table-ref="TAB14" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP68" populated="true" UUID="705b7c21-59d3-4b01-9b7f-8a2f8aec1e20" fk-column-ref="COL45" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL15" />
+    </relationship>
+    <relationship id="REL69" populated="true" UUID="aae02b87-bc04-4b73-a407-86a919725f6a" deferrability="7" deleteRule="3" fk-table-ref="TAB14" fkCardinality="7" identifying="false" name="fk_proj_idproject_exectrl_id_project" physicalName="fk_proj_idproject_exectrl_id_project" pk-table-ref="TAB26" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP70" populated="true" UUID="56c06d11-213e-4a6f-b17d-110964c95d72" fk-column-ref="COL16" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL27" />
+    </relationship>
+    <relationship id="REL71" populated="true" UUID="f3ae77bb-0ba4-4517-8014-71754938a361" deferrability="7" deleteRule="3" fk-table-ref="TAB52" fkCardinality="7" identifying="false" name="fk_commit_idproject_projc_id_project" physicalName="fk_commit_idproject_projc_id_project" pk-table-ref="TAB26" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP72" populated="true" UUID="d700868b-cd97-4e83-a645-2d2df509b4a4" fk-column-ref="COL60" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL27" />
+    </relationship>
+    <relationship id="REL73" populated="true" UUID="4fe722ee-7f55-4348-866f-e16ce3d59461" deferrability="7" deleteRule="3" fk-table-ref="TAB43" fkCardinality="7" identifying="false" name="commit_refactoring_item_fk" physicalName="commit_refactoring_item_fk" pk-table-ref="TAB52" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP74" populated="true" UUID="1a489b05-c9ac-42fd-8cfe-700dbb34f8f1" fk-column-ref="COL48" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL53" />
+    </relationship>
+   </relationships>
+  </database>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB76" populated="true" UUID="652c9658-9c84-4e74-b727-be37cbc38a0d" name="project" objectType="TABLE" physicalName="project" >
+   <remarks>Tabela para armarzenar os dados dos projetos do github utilizado no projeto da disciplina</remarks>
+   <folder id="FOLTAB761" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL77" populated="true" UUID="fa07d7ad-60a9-4b1f-a24f-2519b3ddccd6" autoIncrement="true" autoIncrementSequenceName="sq_project" defaultValue="" name="id_project" nullable="0" physicalName="id_project" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL78" populated="true" UUID="486d1fcc-f0d3-4c43-b53a-3cc022de797f" autoIncrement="false" autoIncrementSequenceName="project_code_project_seq" defaultValue="" name="code_project" nullable="0" physicalName="code_project" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Código do projeto. Gerado com base sequêncial no número de projetos analisados.</remarks>
+    </column>
+    <column id="COL79" populated="true" UUID="8d913d96-7161-4362-98e0-65c661cc3d5e" autoIncrement="false" autoIncrementSequenceName="project_name_project_seq" defaultValue="" name="name_project" nullable="0" physicalName="name_project" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do projeto github utilizado</remarks>
+    </column>
+    <column id="COL80" populated="true" UUID="a1134d02-c056-4073-989c-5ff87c11a0bd" autoIncrement="false" autoIncrementSequenceName="project_total_commit_project_seq" defaultValue="" name="total_commit_project" nullable="1" physicalName="total_commit_project" precision="5" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL81" populated="true" UUID="080b8712-94a2-4478-8b77-dbc48b16e898" autoIncrement="false" autoIncrementSequenceName="project_git_url_project_seq" defaultValue="" name="git_url_project" nullable="0" physicalName="git_url_project" precision="4000" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>URL do git utilizada para clonar o projeto.</remarks>
+    </column>
+    <column id="COL82" populated="true" UUID="5942cd44-c3ed-4f4a-ab0e-9997d94644dc" autoIncrement="false" autoIncrementSequenceName="project_total_branch_project_seq" defaultValue="" name="total_branch_project" nullable="1" physicalName="total_branch_project" precision="5" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Total de branches que o projecto possui</remarks>
+    </column>
+    <column id="COL83" populated="true" UUID="2a31a952-9c07-44eb-8a37-5175d5ef68db" autoIncrement="false" autoIncrementSequenceName="project_total_release_project_seq" defaultValue="" name="total_release_project" nullable="1" physicalName="total_release_project" precision="5" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Total de realeases do projeto</remarks>
+    </column>
+    <column id="COL84" populated="true" UUID="a88d5d2f-4736-43aa-800d-346de85b5948" autoIncrement="false" autoIncrementSequenceName="project_total_contributor_project_seq" defaultValue="" name="total_contributor_project" nullable="1" physicalName="total_contributor_project" precision="5" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL85" populated="true" UUID="9d9f9887-98d8-4977-8c2c-563d502c3c2a" autoIncrement="false" autoIncrementSequenceName="project_loc_poject_seq" defaultValue="" name="loc_project" nullable="1" physicalName="loc_poject" precision="5" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Numero de linhas ( number of lines) da última versão coletada dos sistema.</remarks>
+    </column>
+    <column id="COL86" populated="true" UUID="cd641f8a-8e14-4a43-b024-8cfe057b0f65" autoIncrement="false" autoIncrementSequenceName="project_updating_date_seq" defaultValue="" name="updating_date" nullable="0" physicalName="updating_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>Data de atualização das informações</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB763" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB762" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB764" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX87" populated="true" UUID="730a2941-ae1b-4b75-b98c-d95eeca8397b" clustered="false" name="pk_project" physicalName="pk_project" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC88" populated="true" UUID="47099ed7-b10d-4a1f-8eec-8726f86ad3a3" ascendingOrDescending="UNSPECIFIED" column-ref="COL77" name="id_project" physicalName="id_project" />
+    </index>
+    <index id="IDX89" populated="true" UUID="0df1026a-0ee5-48e2-9250-1e8dcb7270d4" clustered="false" name="uq_cod_project" physicalName="uq_cod_project" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC90" populated="true" UUID="75d226a5-e4c2-4047-8984-0e1bccd4ac10" ascendingOrDescending="UNSPECIFIED" column-ref="COL78" name="code_project" physicalName="code_project" />
+    </index>
+    <index id="IDX91" populated="true" UUID="1e589e13-81b4-4376-9bce-19033f4afa25" clustered="false" name="uq_name_project" physicalName="uq_name_project" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC92" populated="true" UUID="c9623778-168f-4f4b-a1f4-7bd800342854" ascendingOrDescending="UNSPECIFIED" column-ref="COL79" name="name_project" physicalName="name_project" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB93" populated="true" UUID="27c9984d-dc24-4141-8003-751805983857" name="execution_control" objectType="TABLE" physicalName="execution_control" >
+   <remarks>Trabalha para controlar a execução da coleta de refactoring de cada projeto analisado</remarks>
+   <folder id="FOLTAB931" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL94" populated="true" UUID="36e0eb4a-e6d7-4727-a71a-2ee786212598" autoIncrement="false" autoIncrementSequenceName="sq_execution_control" defaultValue="" name="id_execution_control" nullable="0" physicalName="id_execution_control" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Chave primária da tabela execution_control. Valor auto-incrementado.</remarks>
+    </column>
+    <column id="COL95" populated="true" UUID="9cf37bb0-a739-494e-aa2b-b44663515a63" autoIncrement="false" autoIncrementSequenceName="execution_control_id_project_seq" defaultValue="" name="id_project" nullable="0" physicalName="id_project" precision="10" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Chave estrangeira (FK) para a tabela project</remarks>
+    </column>
+    <column id="COL96" populated="true" UUID="45fb4281-b749-45d5-a9af-025a2fe828dd" autoIncrement="false" autoIncrementSequenceName="execution_control_seq_sequence_seq" defaultValue="" name="execution_sequence" nullable="0" physicalName="seq_sequence" precision="5" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Sequência de execução de deterimado projeto</remarks>
+    </column>
+    <column id="COL97" populated="true" UUID="f6c603c0-89eb-4e53-a75e-a5852e4c8c14" autoIncrement="false" autoIncrementSequenceName="execution_control_start_time_seq" defaultValue="" name="start_time" nullable="1" physicalName="start_time" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>Estampa de tempo do início da execução do projeto</remarks>
+    </column>
+    <column id="COL98" populated="true" UUID="38aeea3f-410c-4026-905f-5bbcb648afa7" autoIncrement="false" autoIncrementSequenceName="execution_control_finish_time_seq" defaultValue="" name="finish_time" nullable="1" physicalName="finish_time" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>Tempo de finalizado da sequência de execução de determinado projeto</remarks>
+    </column>
+    <column id="COL99" populated="true" UUID="696d43ec-e3eb-4976-ae7f-adffca682ef6" autoIncrement="false" autoIncrementSequenceName="execution_control_sucess_seq" defaultValue="&apos;S&apos;" name="sucess" nullable="0" physicalName="sucess" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>Indicativo do sucesso ou não da execução de determinado projeto</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB933" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB932" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB934" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX100" populated="true" UUID="fd0036ec-c94c-4746-895a-ebbd0a70747b" clustered="false" name="pk_execution_control" physicalName="pk_execution_control" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC101" populated="true" UUID="05dbeccb-5eb0-4b4e-96a3-5ba09932d4df" ascendingOrDescending="UNSPECIFIED" column-ref="COL94" name="id_execution_control" physicalName="id_execution_control" />
+    </index>
+    <index id="IDX102" populated="true" UUID="51c7e8e0-274c-46d4-914d-3e25e1b79d21" clustered="false" name="uq_id_project_execution_sequence" physicalName="uq_id_project_execution_sequence" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC103" populated="true" UUID="77fd9ecd-85f1-4867-a441-2e2327933a66" ascendingOrDescending="UNSPECIFIED" column-ref="COL95" name="id_project" physicalName="id_project" />
+     <index-column id="IDC104" populated="true" UUID="9d2f5d89-3d9d-4768-9df9-100515809942" ascendingOrDescending="UNSPECIFIED" column-ref="COL96" name="execution_sequence" physicalName="seq_sequence" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB105" populated="true" UUID="81fec5af-5e49-4a78-897d-82f4385a57eb" name="refactoring_item" objectType="TABLE" physicalName="refactoring_item" >
+   <remarks>Tabela para armezar os itens de refactoroings recuperados de determinado projecto</remarks>
+   <folder id="FOLTAB1051" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL106" populated="true" UUID="b943f5ef-178e-4e3b-97ae-f7e4b54027f9" autoIncrement="true" autoIncrementSequenceName="sq_refactoring_item" defaultValue="" name="id_refactoring_item" nullable="0" physicalName="id_refactoring_item" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>ṔK da tabela refacotring_item. Número sequência auto-incrementado.</remarks>
+    </column>
+    <column id="COL107" populated="true" UUID="8f8cc0d1-3b9d-4c22-9ece-cc046e388d9b" autoIncrement="false" autoIncrementSequenceName="refactoring_item_id_commit_seq" defaultValue="" name="id_commit" nullable="0" physicalName="id_commit" precision="10" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Chave estrangeira para a tabela commit</remarks>
+    </column>
+    <column id="COL108" populated="true" UUID="0b77ecbe-b294-457f-9a88-98788c23653c" autoIncrement="false" autoIncrementSequenceName="refactoring_item_id_execution_control_seq" defaultValue="" name="id_execution_control" nullable="0" physicalName="id_execution_control" precision="10" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>FK da tabela execution_control</remarks>
+    </column>
+    <column id="COL109" populated="true" UUID="f85ab70e-6472-434c-a40d-c0dd69b34ea7" autoIncrement="false" autoIncrementSequenceName="refactoring_item_refactoring_name_seq" defaultValue="" name="refactoring_name" nullable="0" physicalName="refactoring_name" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do refactoring detectado.</remarks>
+    </column>
+    <column id="COL110" populated="true" UUID="673c91ff-9f97-4c11-a7aa-f1c12ddd8b02" autoIncrement="false" defaultValue="" name="refactoring_string" nullable="0" physicalName="refactoring_string" precision="3000" referenceCount="1" scale="0" source-column-ref="COL10" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL111" populated="true" UUID="f069b91c-2e1e-46c1-a6ce-812de407f272" autoIncrement="false" autoIncrementSequenceName="refactoring_item_update_time_seq" defaultValue="" name="update_time" nullable="0" physicalName="update_time" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>Data de atualizaçaõ ou inserção do registro</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1053" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1052" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1054" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX112" populated="true" UUID="581ebc10-e03f-4c3e-96f2-db85c39655fe" clustered="false" name="pk_refactoring_item" physicalName="pk_refactoring_item" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC113" populated="true" UUID="6b61e050-b82e-4608-a10a-19564716a39a" ascendingOrDescending="UNSPECIFIED" column-ref="COL106" name="id_refactoring_item" physicalName="id_refactoring_item" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB114" populated="true" UUID="896b0703-caf6-4e3f-9563-333c58a5e2ba" name="commit" objectType="TABLE" physicalName="commit" >
+   <remarks>Tabela que armeza os commits de determinado projeto</remarks>
+   <folder id="FOLTAB1141" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL115" populated="true" UUID="dc4d61b4-c8f0-4fd6-bb22-9b7d56a0faa9" autoIncrement="true" autoIncrementSequenceName="sq_commit" defaultValue="" name="id_commit" nullable="0" physicalName="id_commit" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Chave primária da tabela commit. Valor automático e autoincementável.</remarks>
+    </column>
+    <column id="COL116" populated="true" UUID="b0c84e94-d0fe-4130-abe2-0dd313e6f6ef" autoIncrement="false" autoIncrementSequenceName="refactoring_item_commit_sha_key_seq" defaultValue="" name="commit_sha_key" nullable="0" physicalName="commit_sha_key" precision="40" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>SHA  key do commit sendo analisado</remarks>
+    </column>
+    <column id="COL117" populated="true" UUID="2a43dd7d-ae1f-429a-84da-89fe36d6fed9" autoIncrement="false" autoIncrementSequenceName="refactoring_item_parent_commit_sha_key_seq" defaultValue="" name="parent_commit_sha_key" nullable="0" physicalName="parent_commit_sha_key" precision="40" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Chave SHA do commit pai (commit anterior) ao que está sendo analisado e que fio salvo na coluna commit_sha_key</remarks>
+    </column>
+    <column id="COL118" populated="true" UUID="eb0f3e9c-9f49-4a79-ae69-d224de5ded19" autoIncrement="false" autoIncrementSequenceName="refactoring_item_commit_Date_seq" defaultValue="" name="commit_date" nullable="0" physicalName="commit_Date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>Date e hora que o commit foi realizado.</remarks>
+    </column>
+    <column id="COL119" populated="true" UUID="a8e5fcab-8a19-4eb6-9fbd-43b7a6ed7a62" autoIncrement="false" autoIncrementSequenceName="refactoring_item_commit_autor_seq" defaultValue="" name="commit_author" nullable="0" physicalName="commit_autor" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Autor do commit</remarks>
+    </column>
+    <column id="COL120" populated="true" UUID="28eafe34-b335-4e89-a25c-f9d879b7c855" autoIncrement="false" autoIncrementSequenceName="refactoring_item_commit_author_contact_seq" defaultValue="" name="commit_author_contact" nullable="0" physicalName="commit_author_contact" precision="500" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Email de contato com o autor do commit</remarks>
+    </column>
+    <column id="COL121" populated="true" UUID="137a0565-ec71-42c1-b5d6-45f567869ae7" autoIncrement="false" autoIncrementSequenceName="commit_commit_message_seq" defaultValue="" name="commit_message" nullable="0" physicalName="commit_message" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-1" userDefinedTypeUUID="9a814859-ab26-4acd-9415-ea82291bcac1" >
+     <remarks>Armazena a message de commit informada pelo desenvolvedor</remarks>
+    </column>
+    <column id="COL122" populated="true" UUID="582dc8ab-ad7d-4479-aedb-b813fd343b0e" autoIncrement="false" defaultValue="" name="id_project" nullable="1" physicalName="id_project" precision="10" referenceCount="1" scale="0" source-column-ref="COL60" sourceDataTypeName="numeric" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Chave estrageira para a tabela project</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1143" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1142" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1144" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX123" populated="true" UUID="6318b68f-9f02-4ee6-aeba-f778aaf7b02c" clustered="false" name="pk_commit" physicalName="pk_commit" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC124" populated="true" UUID="56250f67-99c6-4c26-9e74-239dc3a99350" ascendingOrDescending="UNSPECIFIED" column-ref="COL115" name="id_commit" physicalName="id_commit" />
+    </index>
+    <index id="IDX125" populated="true" UUID="2cec3b84-3676-4f6a-ab3e-c651b648e6b6" clustered="false" name="uq_commit_sha_key" physicalName="uq_commit_sha_key" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC126" populated="true" UUID="fa4f5a0e-54be-47ab-882f-4c539b45987e" ascendingOrDescending="UNSPECIFIED" column-ref="COL116" name="commit_sha_key" physicalName="commit_sha_key" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL127" populated="true" UUID="bfdf03c4-d563-41dc-89de-2474d06becf6" deferrability="7" deleteRule="3" fk-table-ref="TAB93" fkCardinality="7" identifying="true" name="fk_proj_idproject_exectrl_id_project" physicalName="fk_proj_idproject_exectrl_id_project" pk-table-ref="TAB76" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP128" populated="true" UUID="058beb8d-7e55-4eee-b79f-9a9f11d846d4" fk-column-ref="COL95" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL77" />
+   </relationship>
+   <relationship id="REL129" populated="true" UUID="21829d94-933c-402c-913b-b68a60ada82c" deferrability="7" deleteRule="3" fk-table-ref="TAB105" fkCardinality="7" identifying="false" name="fk_execctrl_idexectrl_recitm_idexectrl" physicalName="fk_execctrl_idexectrl_recitm_idexectrl" pk-table-ref="TAB93" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP130" populated="true" UUID="6f4854d1-6f00-4492-bcb4-317e299cf055" fk-column-ref="COL108" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL94" />
+   </relationship>
+   <relationship id="REL131" populated="true" UUID="8d5317e7-6963-4a24-8b76-129e7a0a61f3" deferrability="7" deleteRule="3" fk-table-ref="TAB105" fkCardinality="7" identifying="false" name="commit_refactoring_item_fk" physicalName="commit_refactoring_item_fk" pk-table-ref="TAB114" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP132" populated="true" UUID="87780009-01d6-46ae-9f48-885def42da7b" fk-column-ref="COL107" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL115" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="42" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB76" x="20" y="276" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB93" x="629" y="284" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB105" x="291" y="589" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB114" x="369" y="20" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL127" pkConnection="0.22162162162162163" fkConnection="0.9253731343283582" rLineColor="0x4c4c4c" pkLabelText="project" fkLabelText="execution_control" orientation="33"/>
+  <table-link relationship-ref="REL129" pkConnection="0.2791327913279133" fkConnection="0.6312997347480106" rLineColor="0x4c4c4c" pkLabelText="execution_control" fkLabelText="refactoring_item" orientation="132"/>
+  <table-link relationship-ref="REL131" pkConnection="0.47058823529411764" fkConnection="0.5190217391304348" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="132"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
